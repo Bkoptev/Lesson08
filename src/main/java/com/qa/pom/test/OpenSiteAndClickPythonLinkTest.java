@@ -2,7 +2,7 @@ package com.qa.pom.test;
 
 import com.qa.pom.base.BaseTest;
 import com.qa.pom.pages.HomePage;
-import com.qa.pom.pages.PythonPage;
+import com.qa.pom.pages.LoginPage;
 import org.junit.Test;
 
 public class OpenSiteAndClickPythonLinkTest extends BaseTest {
@@ -15,10 +15,10 @@ public class OpenSiteAndClickPythonLinkTest extends BaseTest {
         HomePage homePage = openSite();
 
         // Click on Python Link
-        PythonPage pythonPage = homePage.clickPythonLink();
+        LoginPage loginPage = homePage.clickPythonLink();
 
         // Verify title
-        pythonPage.verifyTitle();
+        loginPage.verifyTitle();
 
         // CLose site
         closeSite();

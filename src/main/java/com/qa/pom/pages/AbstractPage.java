@@ -12,10 +12,10 @@ public abstract class AbstractPage {
     //
     // Web elements with @FindBy annotation
     //
-    @FindBy(xpath = "//ul[@id='main-nav']//span[.='PYTHON']/..")
-    private WebElement pythonLink;
+    @FindBy(xpath = "//a[@class='login']")
+    private WebElement loginLink;
 
-    @FindBy(xpath = "//div[@id='main']")
+    @FindBy(xpath = "//div[@id='page']")
     protected WebElement pageDiv;
 
     /** Constructor */
@@ -30,9 +30,9 @@ public abstract class AbstractPage {
      *
      * @return PythonPage
      */
-    public PythonPage clickPythonLink() {
-        testClass.waitTillElementIsVisible(pythonLink);
-        pythonLink.click();
-        return new PythonPage(testClass);
+    public LoginPage clickPythonLink() {
+        testClass.waitTillElementIsVisible(loginLink);
+        loginLink.click();
+        return new LoginPage(testClass);
     }
 }

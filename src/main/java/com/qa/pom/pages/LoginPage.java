@@ -3,7 +3,7 @@ package com.qa.pom.pages;
 import com.qa.pom.base.BaseTest;
 import org.junit.Assert;
 
-public class PythonPage extends AbstractPage {
+public class LoginPage extends AbstractPage {
 
     // Title constant
     private final String TITLE = "Selenium Framework | Python Course";
@@ -13,7 +13,7 @@ public class PythonPage extends AbstractPage {
      *
      * @param testClass
      */
-    public PythonPage(BaseTest testClass) {
+    public LoginPage(BaseTest testClass) {
         super(testClass);
         testClass.waitTillElementIsVisible(pageDiv);
     }
