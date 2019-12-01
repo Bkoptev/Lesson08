@@ -1,30 +1,28 @@
 package com.qa.pom.pages;
 
-import org.openqa.selenium.WebDriver;
+import com.qa.pom.base.BaseTest;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
 public abstract class AbstractPage {
 
-    private WebDriver driver;
-    private WebDriverWait wait;
+    protected BaseTest testClass;
 
-    /*
-    Web elements with @FindBy annotation
-     */
+    //
+    // Web elements with @FindBy annotation
+    //
+    @FindBy(xpath = "//ul[@id='main-nav']//span[.='PYTHON']/..")
+    private WebElement pythonLink;
 
-    @FindBy(xpath = "//div[@id='page']")
+    @FindBy(xpath = "//div[@id='main']")
     protected WebElement pageDiv;
 
     /** Constructor */
-    public AbstractPage(WebDriver driver) {
-        this.driver = driver;
-        wait = new WebDriverWait(driver, 10);
-        PageFactory.initElements(driver, this);  // Initialize WebElements
-        wait.until(ExpectedConditions.visibilityOf(pageDiv));
+    public AbstractPage(BaseTest testClass) {
+        this.testClass = testClass;
+        PageFactory.initElements(testClass.getDriver(), this); // Initialize WebElements
+        testClass.waitTillElementIsVisible(pageDiv);
     }
 
     /**
@@ -32,8 +30,9 @@ public abstract class AbstractPage {
      *
      * @return PythonPage
      */
-//    public HomePage clickPythonLink() {
-//        wait.until(ExpectedConditions.elementToBeClickable(pythonLink)).click();
-//        return new PythonPage(driver);
-//    }
+    public PythonPage clickPythonLink() {
+        testClass.waitTillElementIsVisible(pythonLink);
+        pythonLink.click();
+        return new PythonPage(testClass);
+    }
 }

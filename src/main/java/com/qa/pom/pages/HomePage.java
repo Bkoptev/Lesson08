@@ -1,15 +1,16 @@
 package com.qa.pom.pages;
 
-import org.openqa.selenium.WebDriver;
+import com.qa.pom.base.BaseTest;
 
 public class HomePage extends AbstractPage {
 
     /**
      * Constructor
      *
-     * @param driver
+     * @param testClass
      */
-    public HomePage(WebDriver driver) {
-        super(driver);
+    public HomePage(BaseTest testClass) {
+        super(testClass);
+        testClass.waitTillElementIsVisible(pageDiv);
     }
 }
