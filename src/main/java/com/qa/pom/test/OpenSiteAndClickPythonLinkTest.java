@@ -21,12 +21,18 @@ public class OpenSiteAndClickPythonLinkTest extends BaseTest {
         LoginPage loginPage = homePage.clickLoginLink();
 
         // Log in
-        //loginPage.logIn();
-
-        //Verify name
         MyAccountPage myAccountPage = loginPage.logIn();
 
+        // Verify name
+        myAccountPage.verifyName();
+
+        // Sign out
+        myAccountPage.signOut();
+
+        // Verify log in page loaded again
+        loginPage.verifyLoginPage();
+
         // CLose site
-        //closeSite();
+        closeSite();
     }
 }

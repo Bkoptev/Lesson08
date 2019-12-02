@@ -19,6 +19,9 @@ public abstract class AbstractPage {
     @FindBy(xpath = "//div[@id='page']")
     protected WebElement pageDiv;
 
+    @FindBy(xpath = "//button[@id='SubmitLogin']/span")
+    protected WebElement submitButton;
+
 
     /**
      * Constructor

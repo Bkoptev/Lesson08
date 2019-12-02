@@ -21,12 +21,17 @@ public class LoginPage extends AbstractPage {
         testClass.waitTillElementIsVisible(pageDiv);
     }
 
-    /** Log in using email and password form configuration.yaml */
-    public void logIn() throws IOException {
+    /** Log in using email and password form configuration.yaml
+     * @return*/
+    public MyAccountPage logIn () throws IOException {
         testClass.getDriver().findElement(By.xpath("//input[@id='email']")).sendKeys(YamlParser.getYamlData().getEmail());
         testClass.getDriver().findElement(By.xpath("//input[@id='passwd']")).sendKeys(YamlParser.getYamlData().getPassword());
         testClass.getDriver().findElement(By.xpath("//button[@id='SubmitLogin']/span")).click();
+        return new MyAccountPage(testClass);
+    }
 
+    public void verifyLoginPage () {
+        testClass.waitTillElementIsVisible(submitButton);
     }
 
 
