@@ -8,7 +8,7 @@ import org.openqa.selenium.support.PageFactory;
 
 public abstract class AbstractPage {
 
-    protected BaseTest testClass;
+    BaseTest testClass;
 
     //
     // Web elements with @FindBy annotation
@@ -17,21 +17,21 @@ public abstract class AbstractPage {
     private WebElement loginLink;
 
     @FindBy(xpath = "//div[@id='page']")
-    protected WebElement pageDiv;
+    WebElement pageDiv;
 
     @FindBy(xpath = "//button[@id='SubmitLogin']/span")
-    protected WebElement submitButton;
+    WebElement submitButton;
 
     @FindBy(xpath = "//input[@id='email']")
-    protected WebElement email;
+    WebElement email;
 
     @FindBy(xpath = "//input[@id='passwd']")
-    protected WebElement password;
+    WebElement password;
 
     // input[@id='passwd']
 
     /** Constructor */
-    public AbstractPage(BaseTest testClass) {
+    AbstractPage(BaseTest testClass) {
         this.testClass = testClass;
         PageFactory.initElements(testClass.getDriver(), this); // Initialize WebElements
         testClass.waitTillElementIsVisible(pageDiv);

@@ -9,9 +9,9 @@ public class LoginPage extends AbstractPage {
     /**
      * Constructor
      *
-     * @param testClass
+     * @param testClass the instance of login page
      */
-    public LoginPage(BaseTest testClass) {
+    LoginPage(BaseTest testClass) {
         super(testClass);
         testClass.waitTillElementIsVisible(pageDiv);
     }
@@ -28,6 +28,9 @@ public class LoginPage extends AbstractPage {
         return new MyAccountPage(testClass);
     }
 
+    /**
+     * Wait till Submit button become visible
+     */
     public void verifyLoginPage() {
         testClass.waitTillElementIsVisible(submitButton);
     }

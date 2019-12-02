@@ -12,7 +12,7 @@ public class MyAccountPage extends AbstractPage {
     /**
      * Constructor
      *
-     * @param testClass
+     * @param testClass the instance of account page
      */
     public MyAccountPage(BaseTest testClass) {
         super(testClass);

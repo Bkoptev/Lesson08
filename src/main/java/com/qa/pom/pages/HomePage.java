@@ -7,7 +7,7 @@ public class HomePage extends AbstractPage {
     /**
      * Constructor
      *
-     * @param testClass
+     * @param testClass the instance of home page
      */
     public HomePage(BaseTest testClass) {
         super(testClass);

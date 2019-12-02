@@ -38,9 +38,9 @@ public class BaseTest {
     /**
      * Open site and get instance of HomePage
      *
-     * @return
+     * @return the instance of HomePage
      */
-    public HomePage openSite() {
+    protected HomePage openSite() {
         try {
             driver.get(YamlParser.getYamlData().getUrl());
         } catch (IOException e) {
@@ -50,7 +50,7 @@ public class BaseTest {
     }
 
     /** Close site and make driver quit */
-    public void closeSite() {
+    protected void closeSite() {
         driver.quit();
     }
 
@@ -66,7 +66,7 @@ public class BaseTest {
     /**
      * Wait till element is visible
      *
-     * @param element
+     * @param element element which test is waiting to appear on the page
      */
     public void waitTillElementIsVisible(WebElement element) {
         wait.until(ExpectedConditions.visibilityOf(element));
