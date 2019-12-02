@@ -6,8 +6,8 @@ import org.openqa.selenium.By;
 
 public class MyAccountPage extends AbstractPage {
 
-    private String regName = "Test QA";
-    private String nameXPath = "//a[@class='account']/span";
+    private String REG_NAME = "Test QA";
+    private String NAME_XPATH = "//a[@class='account']/span";
 
     /**
      * Constructor
@@ -23,13 +23,7 @@ public class MyAccountPage extends AbstractPage {
     public void verifyName() {
         Assert.assertEquals(
                 "Name is not the same",
-                regName,
-                testClass.getDriver().findElement(By.xpath(nameXPath)).getText());
-        System.out.println(testClass.getDriver().getTitle());
-    }
-
-    /** Check log in page after log out */
-    public void signOut() {
-        testClass.getDriver().findElement(By.xpath("//a[@class='logout']")).click();
+                REG_NAME,
+                testClass.getDriver().findElement(By.xpath(NAME_XPATH)).getText());
     }
 }

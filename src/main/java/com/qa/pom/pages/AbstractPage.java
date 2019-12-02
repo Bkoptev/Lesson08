@@ -1,6 +1,7 @@
 package com.qa.pom.pages;
 
 import com.qa.pom.base.BaseTest;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -21,6 +22,14 @@ public abstract class AbstractPage {
     @FindBy(xpath = "//button[@id='SubmitLogin']/span")
     protected WebElement submitButton;
 
+    @FindBy(xpath = "//input[@id='email']")
+    protected WebElement email;
+
+    @FindBy(xpath = "//input[@id='passwd']")
+    protected WebElement password;
+
+    // input[@id='passwd']
+
     /** Constructor */
     public AbstractPage(BaseTest testClass) {
         this.testClass = testClass;
@@ -36,6 +45,12 @@ public abstract class AbstractPage {
     public LoginPage clickLoginLink() {
         testClass.waitTillElementIsVisible(loginLink);
         loginLink.click();
+        return new LoginPage(testClass);
+    }
+
+    /** Check log in page after log out */
+    public LoginPage signOut() {
+        testClass.getDriver().findElement(By.xpath("//a[@class='logout']")).click();
         return new LoginPage(testClass);
     }
 }

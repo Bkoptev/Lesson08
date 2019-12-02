@@ -26,7 +26,7 @@ public class OpenSiteAndClickPythonLinkTest extends BaseTest {
         myAccountPage.verifyName();
 
         // Sign out
-        myAccountPage.signOut();
+        loginPage = myAccountPage.signOut();
 
         // Verify log in page loaded again
         loginPage.verifyLoginPage();
