@@ -7,7 +7,7 @@ import com.qa.pom.pages.MyAccountPage;
 import java.io.IOException;
 import org.junit.Test;
 
-public class OpenSiteAndClickPythonLinkTest extends BaseTest {
+public class OpenSiteLoginCheckNameLogOut extends BaseTest {
 
     /** Open site and log in. Verify name. Log put and check the log in page. */
     @Test
