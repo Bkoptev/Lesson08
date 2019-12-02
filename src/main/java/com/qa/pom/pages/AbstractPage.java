@@ -22,13 +22,9 @@ public abstract class AbstractPage {
     @FindBy(xpath = "//button[@id='SubmitLogin']/span")
     WebElement submitButton;
 
-    @FindBy(xpath = "//input[@id='email']")
-    WebElement email;
+    @FindBy(xpath = "//a[@class='logout']")
+    WebElement logOutButton;
 
-    @FindBy(xpath = "//input[@id='passwd']")
-    WebElement password;
-
-    // input[@id='passwd']
 
     /** Constructor */
     AbstractPage(BaseTest testClass) {
@@ -50,7 +46,7 @@ public abstract class AbstractPage {
 
     /** Check log in page after log out */
     public LoginPage signOut() {
-        testClass.getDriver().findElement(By.xpath("//a[@class='logout']")).click();
+        logOutButton.click();
         return new LoginPage(testClass);
     }
 }
