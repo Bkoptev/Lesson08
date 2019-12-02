@@ -49,8 +49,6 @@ public class BaseTest {
         return new HomePage(this);
     }
 
-
-
     /** Close site and make driver quit */
     public void closeSite() {
         driver.quit();

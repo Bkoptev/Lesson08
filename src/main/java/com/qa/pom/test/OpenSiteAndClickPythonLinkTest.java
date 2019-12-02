@@ -4,13 +4,12 @@ import com.qa.pom.base.BaseTest;
 import com.qa.pom.pages.HomePage;
 import com.qa.pom.pages.LoginPage;
 import com.qa.pom.pages.MyAccountPage;
-import org.junit.Test;
-
 import java.io.IOException;
+import org.junit.Test;
 
 public class OpenSiteAndClickPythonLinkTest extends BaseTest {
 
-    /** Open site and click on Python link. Verify title */
+    /** Open site and log in. Verify name. Log put and check the log in page. */
     @Test
     public void testOpenSiteAndClickPythonLinkTest() throws IOException {
 

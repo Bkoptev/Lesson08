@@ -1,7 +1,6 @@
 package com.qa.pom.pages;
 
 import com.qa.pom.base.BaseTest;
-import org.junit.Assert;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -22,10 +21,7 @@ public abstract class AbstractPage {
     @FindBy(xpath = "//button[@id='SubmitLogin']/span")
     protected WebElement submitButton;
 
-
-    /**
-     * Constructor
-     */
+    /** Constructor */
     public AbstractPage(BaseTest testClass) {
         this.testClass = testClass;
         PageFactory.initElements(testClass.getDriver(), this); // Initialize WebElements
@@ -42,5 +38,4 @@ public abstract class AbstractPage {
         loginLink.click();
         return new LoginPage(testClass);
     }
-
 }

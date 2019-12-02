@@ -2,14 +2,10 @@ package com.qa.pom.pages;
 
 import com.qa.pom.base.BaseTest;
 import com.qa.pom.utils.YamlParser;
+import java.io.IOException;
 import org.openqa.selenium.By;
 
-import java.io.IOException;
-
-
 public class LoginPage extends AbstractPage {
-
-
 
     /**
      * Constructor
@@ -21,18 +17,25 @@ public class LoginPage extends AbstractPage {
         testClass.waitTillElementIsVisible(pageDiv);
     }
 
-    /** Log in using email and password form configuration.yaml
-     * @return*/
-    public MyAccountPage logIn () throws IOException {
-        testClass.getDriver().findElement(By.xpath("//input[@id='email']")).sendKeys(YamlParser.getYamlData().getEmail());
-        testClass.getDriver().findElement(By.xpath("//input[@id='passwd']")).sendKeys(YamlParser.getYamlData().getPassword());
+    /**
+     * Log in using email and password form configuration.yaml
+     *
+     * @return next page
+     */
+    public MyAccountPage logIn() throws IOException {
+        testClass
+                .getDriver()
+                .findElement(By.xpath("//input[@id='email']"))
+                .sendKeys(YamlParser.getYamlData().getEmail());
+        testClass
+                .getDriver()
+                .findElement(By.xpath("//input[@id='passwd']"))
+                .sendKeys(YamlParser.getYamlData().getPassword());
         testClass.getDriver().findElement(By.xpath("//button[@id='SubmitLogin']/span")).click();
         return new MyAccountPage(testClass);
     }
 
-    public void verifyLoginPage () {
+    public void verifyLoginPage() {
         testClass.waitTillElementIsVisible(submitButton);
     }
-
-
 }

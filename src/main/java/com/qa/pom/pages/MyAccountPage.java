@@ -19,10 +19,16 @@ public class MyAccountPage extends AbstractPage {
         testClass.waitTillElementIsVisible(pageDiv);
     }
 
+    /** Verify the name */
     public void verifyName() {
-        Assert.assertEquals("Name is not the same", regName, testClass.getDriver().findElement(By.xpath(nameXPath)).getText());
+        Assert.assertEquals(
+                "Name is not the same",
+                regName,
+                testClass.getDriver().findElement(By.xpath(nameXPath)).getText());
         System.out.println(testClass.getDriver().getTitle());
     }
+
+    /** Check log in page after log out */
     public void signOut() {
         testClass.getDriver().findElement(By.xpath("//a[@class='logout']")).click();
     }
