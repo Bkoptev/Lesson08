@@ -1,12 +1,15 @@
 package com.qa.pom.pages;
 
 import com.qa.pom.base.BaseTest;
-import org.junit.Assert;
+import com.qa.pom.utils.YamlParser;
+import org.openqa.selenium.By;
+
+import java.io.IOException;
+
 
 public class LoginPage extends AbstractPage {
 
-    // Title constant
-    private final String TITLE = "Selenium Framework | Python Course";
+
 
     /**
      * Constructor
@@ -18,8 +21,13 @@ public class LoginPage extends AbstractPage {
         testClass.waitTillElementIsVisible(pageDiv);
     }
 
-    /** Verify that titles are the same */
-    public void verifyTitle() {
-        Assert.assertEquals("Titles are not the same", TITLE, testClass.getDriver().getTitle());
+    /** Log in using email and password form configuration.yaml */
+    public void logIn() throws IOException {
+        testClass.getDriver().findElement(By.xpath("//input[@id='email']")).sendKeys(YamlParser.getYamlData().getEmail());
+        testClass.getDriver().findElement(By.xpath("//input[@id='passwd']")).sendKeys(YamlParser.getYamlData().getPassword());
+        testClass.getDriver().findElement(By.xpath("//button[@id='SubmitLogin']/span")).click();
+
     }
+
+
 }
