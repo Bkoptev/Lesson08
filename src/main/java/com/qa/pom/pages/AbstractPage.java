@@ -31,8 +31,12 @@ public abstract class AbstractPage {
     @FindBy(
             xpath =
                     "//li[@id='category-thumbnail']/../../following-sibling::li/a[@title='Dresses']")
-    private
+    protected
     WebElement Dresses;
+
+    @FindBy(xpath = "//li[@id='category-thumbnail']/../../following-sibling::*[2]/a[@title='T-shirts']")
+    protected
+    WebElement tShirts;
 
     /** Constructor */
     public AbstractPage(BaseTest testClass) {

@@ -4,8 +4,11 @@ import com.qa.pom.pages.HomePage;
 import com.qa.pom.utils.YamlParser;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
+import java.util.Arrays;
 import java.util.Calendar;
 import java.util.Collections;
+import java.util.List;
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.junit.Rule;
@@ -105,4 +108,9 @@ public class BaseTest {
     public String getDateTime() {
         return new SimpleDateFormat("YYYY-MM-dd_HH-mm-ss").format(Calendar.getInstance().getTime());
     }
+
+    public void compareBreadCrumb (String expectedBreadcrumb) {
+
+    }
+
 }

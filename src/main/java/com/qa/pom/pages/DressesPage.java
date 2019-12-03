@@ -6,7 +6,7 @@ import org.openqa.selenium.support.FindBy;
 
 public class DressesPage extends AbstractPage {
 
-    @FindBy(
+    private @FindBy(
             xpath =
                     "//div[@id='categories_block_left']//ul[@class='tree dynamized']//a[contains (text(),'Summer Dresses')]")
     WebElement summerDresses;

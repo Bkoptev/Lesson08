@@ -37,4 +37,10 @@ public class MyAccountPage extends AbstractPage {
         Dresses.click();
         return new DressesPage(testClass);
     }
+
+    public TshirtsPage clickTshirts() {
+        testClass.waitTillElementIsVisible(tShirts);
+        tShirts.click();
+        return new TshirtsPage(testClass);
+    }
 }

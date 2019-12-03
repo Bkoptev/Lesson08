@@ -11,14 +11,14 @@ public class SummerDressesPage extends AbstractPage {
     @FindBy(xpath = "//span[@class='heading-counter']")
     private WebElement allProductsInCounter;
 
-    String NUM_PRODUCTS = "//ul[@class='product_list grid row']/li";
+    protected String NUM_PRODUCTS = "//ul[@class='product_list grid row']/li";
 
     /**
      * Constructor
      *
      * @param testClass the instance of summer dresses page
      */
-    private SummerDressesPage(BaseTest testClass) {
+    protected SummerDressesPage(BaseTest testClass) {
         super(testClass);
         testClass.waitTillElementIsVisible(pageDiv);
     }
