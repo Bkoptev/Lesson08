@@ -13,24 +13,29 @@ public abstract class AbstractPage {
     // Web elements with @FindBy annotation
     //
     @FindBy(xpath = "//a[@class='login']")
+    private
     WebElement loginLink;
 
     @FindBy(xpath = "//div[@id='page']")
+    protected
     WebElement pageDiv;
 
     @FindBy(xpath = "//button[@id='SubmitLogin']/span")
+    protected
     WebElement submitButton;
 
     @FindBy(xpath = "//a[@class='logout']")
+    private
     WebElement logOutButton;
 
     @FindBy(
             xpath =
                     "//li[@id='category-thumbnail']/../../following-sibling::li/a[@title='Dresses']")
+    private
     WebElement Dresses;
 
     /** Constructor */
-    AbstractPage(BaseTest testClass) {
+    public AbstractPage(BaseTest testClass) {
         this.testClass = testClass;
         PageFactory.initElements(testClass.getDriver(), this); // Initialize WebElements
         testClass.waitTillElementIsVisible(pageDiv);

@@ -19,7 +19,7 @@ public class LoginPage extends AbstractPage {
      *
      * @param testClass the instance of login page
      */
-    LoginPage(BaseTest testClass) {
+    public LoginPage(BaseTest testClass) {
         super(testClass);
         testClass.waitTillElementIsVisible(pageDiv);
     }

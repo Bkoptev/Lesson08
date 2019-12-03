@@ -18,7 +18,7 @@ public class SummerDressesPage extends AbstractPage {
      *
      * @param testClass the instance of summer dresses page
      */
-    SummerDressesPage(BaseTest testClass) {
+    private SummerDressesPage(BaseTest testClass) {
         super(testClass);
         testClass.waitTillElementIsVisible(pageDiv);
     }
