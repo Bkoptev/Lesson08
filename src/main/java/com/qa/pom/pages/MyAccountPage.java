@@ -26,4 +26,10 @@ public class MyAccountPage extends AbstractPage {
                 REG_NAME,
                 testClass.getDriver().findElement(By.xpath(NAME_XPATH)).getText());
     }
+
+    public DressesPage clickDresses() {
+        testClass.waitTillElementIsVisible(Dresses);
+        Dresses.click();
+        return new DressesPage(testClass);
+    }
 }

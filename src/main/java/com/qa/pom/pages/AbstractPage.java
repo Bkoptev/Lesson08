@@ -1,7 +1,6 @@
 package com.qa.pom.pages;
 
 import com.qa.pom.base.BaseTest;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -25,6 +24,8 @@ public abstract class AbstractPage {
     @FindBy(xpath = "//a[@class='logout']")
     WebElement logOutButton;
 
+    @FindBy(xpath = "//ul[contains(@class,'sf-menu')]/li[2]")
+    WebElement Dresses;
 
     /** Constructor */
     AbstractPage(BaseTest testClass) {
@@ -49,4 +50,6 @@ public abstract class AbstractPage {
         logOutButton.click();
         return new LoginPage(testClass);
     }
+
+
 }

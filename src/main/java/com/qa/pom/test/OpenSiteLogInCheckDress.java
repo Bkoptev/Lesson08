@@ -1,14 +1,12 @@
 package com.qa.pom.test;
 
 import com.qa.pom.base.BaseTest;
-import com.qa.pom.pages.HomePage;
-import com.qa.pom.pages.LoginPage;
-import com.qa.pom.pages.MyAccountPage;
+import com.qa.pom.pages.*;
+
 import java.io.IOException;
 import org.junit.Test;
 
-public class OpenSiteLoginCheckNameLogOut extends BaseTest {
-
+public class OpenSiteLogInCheckDress extends BaseTest {
     /** Open site and log in. Verify name. Log put and check the log in page. */
 
     @Test
@@ -23,14 +21,12 @@ public class OpenSiteLoginCheckNameLogOut extends BaseTest {
         // Log in
         MyAccountPage myAccountPage = loginPage.logIn();
 
-        // Verify name
-        myAccountPage.verifyName();
+        DressesPage dressesPage = myAccountPage.clickDresses();
 
-        // Sign out
-        loginPage = myAccountPage.signOut();
+        SummerDresses summerDresses = dressesPage.clickSummerDresses();
 
-        // Verify log in page loaded again
-        loginPage.verifyLoginPage();
+        summerDresses.compareGoodsAmount();
+
 
         // CLose site
         closeSite();
