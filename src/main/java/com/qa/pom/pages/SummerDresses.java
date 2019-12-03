@@ -32,7 +32,7 @@ public class SummerDresses extends AbstractPage {
                                         .replaceAll("^.*?(-?\\d+(\\.\\d+)?).*$", "$1"))
                         + " products in counter");
         System.out.println(
-                "Items on page"
+                "Items on page is "
                         + testClass.getDriver().findElements(By.xpath(NUM_PRODUCTS)).size());
         Assert.assertEquals(
                 "Amount is not the same",
