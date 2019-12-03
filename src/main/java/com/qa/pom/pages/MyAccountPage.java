@@ -27,6 +27,11 @@ public class MyAccountPage extends AbstractPage {
                 testClass.getDriver().findElement(By.xpath(NAME_XPATH)).getText());
     }
 
+    /**
+     * Go to Dresses page
+     *
+     * @return instance of dresses page
+     */
     public DressesPage clickDresses() {
         testClass.waitTillElementIsVisible(Dresses);
         Dresses.click();

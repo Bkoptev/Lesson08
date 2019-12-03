@@ -19,10 +19,13 @@ public class OpenSiteLogInCheckDress extends BaseTest {
         // Log in
         MyAccountPage myAccountPage = loginPage.logIn();
 
+        //Go to dresses page
         DressesPage dressesPage = myAccountPage.clickDresses();
 
+        //Go to summer dresses page
         SummerDresses summerDresses = dressesPage.clickSummerDresses();
 
+        // Compare the amount of goods and compare it with number in goods counter
         summerDresses.compareGoodsAmount();
 
         // CLose site

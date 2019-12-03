@@ -47,7 +47,11 @@ public abstract class AbstractPage {
         return new LoginPage(testClass);
     }
 
-    /** Check log in page after log out */
+    /**
+     *  Check log in page after log out
+     *
+     * @return Log in page
+     */
     public LoginPage signOut() {
         logOutButton.click();
         return new LoginPage(testClass);

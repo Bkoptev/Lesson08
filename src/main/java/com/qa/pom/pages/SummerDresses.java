@@ -16,24 +16,18 @@ public class SummerDresses extends AbstractPage {
     /**
      * Constructor
      *
-     * @param testClass
+     * @param testClass the instance of summer dresses page
      */
     SummerDresses(BaseTest testClass) {
         super(testClass);
         testClass.waitTillElementIsVisible(pageDiv);
     }
 
+    /**
+     * Find amount of goods and compare it with number in goods counter
+     */
     public void compareGoodsAmount() {
-        System.out.println(
-                "There are "
-                        + Integer.parseInt(
-                                allProductsInCounter
-                                        .getText()
-                                        .replaceAll("^.*?(-?\\d+(\\.\\d+)?).*$", "$1"))
-                        + " products in counter");
-        System.out.println(
-                "Items on page is "
-                        + testClass.getDriver().findElements(By.xpath(NUM_PRODUCTS)).size());
+
         Assert.assertEquals(
                 "Amount is not the same",
                 Integer.parseInt(
