@@ -4,9 +4,11 @@ import com.qa.pom.base.BaseTest;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-public class DressesPage extends AbstractPage{
+public class DressesPage extends AbstractPage {
 
-    @FindBy(xpath = "//div[@id='categories_block_left']//ul[@class='tree dynamized']//a[contains (text(),'Summer Dresses')]")
+    @FindBy(
+            xpath =
+                    "//div[@id='categories_block_left']//ul[@class='tree dynamized']//a[contains (text(),'Summer Dresses')]")
     WebElement summerDresses;
 
     /**

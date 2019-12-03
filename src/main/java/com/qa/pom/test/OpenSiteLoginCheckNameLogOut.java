@@ -10,7 +10,6 @@ import org.junit.Test;
 public class OpenSiteLoginCheckNameLogOut extends BaseTest {
 
     /** Open site and log in. Verify name. Log put and check the log in page. */
-
     @Test
     public void testOpenSiteAndClickPythonLinkTest() throws IOException {
 

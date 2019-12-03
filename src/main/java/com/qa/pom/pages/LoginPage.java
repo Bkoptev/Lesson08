@@ -2,20 +2,17 @@ package com.qa.pom.pages;
 
 import com.qa.pom.base.BaseTest;
 import com.qa.pom.utils.YamlParser;
+import java.io.IOException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-
-import java.io.IOException;
 
 public class LoginPage extends AbstractPage {
 
     @FindBy(xpath = "//input[@id='email']")
-    private
-    WebElement email;
+    private WebElement email;
 
     @FindBy(xpath = "//input[@id='passwd']")
-    private
-    WebElement password;
+    private WebElement password;
 
     /**
      * Constructor

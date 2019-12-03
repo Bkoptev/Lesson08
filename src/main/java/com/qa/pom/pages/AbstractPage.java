@@ -24,7 +24,9 @@ public abstract class AbstractPage {
     @FindBy(xpath = "//a[@class='logout']")
     WebElement logOutButton;
 
-    @FindBy(xpath = "//li[@id='category-thumbnail']/../../following-sibling::li/a[@title='Dresses']")
+    @FindBy(
+            xpath =
+                    "//li[@id='category-thumbnail']/../../following-sibling::li/a[@title='Dresses']")
     WebElement Dresses;
 
     /** Constructor */
@@ -50,6 +52,4 @@ public abstract class AbstractPage {
         logOutButton.click();
         return new LoginPage(testClass);
     }
-
-
 }
