@@ -24,7 +24,7 @@ public abstract class AbstractPage {
     @FindBy(xpath = "//a[@class='logout']")
     WebElement logOutButton;
 
-    @FindBy(xpath = "//ul[contains(@class,'sf-menu')]/li[2]")
+    @FindBy(xpath = "//li[@id='category-thumbnail']/../../following-sibling::li/a[@title='Dresses']")
     WebElement Dresses;
 
     /** Constructor */
