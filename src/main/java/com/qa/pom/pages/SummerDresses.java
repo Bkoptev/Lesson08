@@ -23,9 +23,7 @@ public class SummerDresses extends AbstractPage {
         testClass.waitTillElementIsVisible(pageDiv);
     }
 
-    /**
-     * Find amount of goods and compare it with number in goods counter
-     */
+    /** Find amount of goods and compare it with number in goods counter */
     public void compareGoodsAmount() {
 
         Assert.assertEquals(

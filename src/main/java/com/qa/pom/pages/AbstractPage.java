@@ -13,7 +13,7 @@ public abstract class AbstractPage {
     // Web elements with @FindBy annotation
     //
     @FindBy(xpath = "//a[@class='login']")
-    private WebElement loginLink;
+    WebElement loginLink;
 
     @FindBy(xpath = "//div[@id='page']")
     WebElement pageDiv;
@@ -48,7 +48,7 @@ public abstract class AbstractPage {
     }
 
     /**
-     *  Check log in page after log out
+     * Check log in page after log out
      *
      * @return Log in page
      */
