@@ -6,19 +6,19 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-public class SummerDresses extends AbstractPage {
+public class SummerDressesPage extends AbstractPage {
 
     @FindBy(xpath = "//span[@class='heading-counter']")
     private WebElement allProductsInCounter;
 
-    private String NUM_PRODUCTS = "//ul[@class='product_list grid row']/li";
+    String NUM_PRODUCTS = "//ul[@class='product_list grid row']/li";
 
     /**
      * Constructor
      *
      * @param testClass the instance of summer dresses page
      */
-    SummerDresses(BaseTest testClass) {
+    SummerDressesPage(BaseTest testClass) {
         super(testClass);
         testClass.waitTillElementIsVisible(pageDiv);
     }
@@ -33,5 +33,13 @@ public class SummerDresses extends AbstractPage {
                                 .getText()
                                 .replaceAll("^.*?(-?\\d+(\\.\\d+)?).*$", "$1")),
                 testClass.getDriver().findElements(By.xpath(NUM_PRODUCTS)).size());
+        testClass.log(
+                "Number of products in counter "
+                        + Integer.parseInt(
+                                allProductsInCounter
+                                        .getText()
+                                        .replaceAll("^.*?(-?\\d+(\\.\\d+)?).*$", "$1"))
+                        + "; Number of products on page"
+                        + testClass.getDriver().findElements(By.xpath(NUM_PRODUCTS)).size());
     }
 }

@@ -3,7 +3,12 @@ package com.qa.pom.base;
 import com.qa.pom.pages.HomePage;
 import com.qa.pom.utils.YamlParser;
 import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Collections;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+import org.junit.Rule;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -15,6 +20,12 @@ public class BaseTest {
 
     private WebDriver driver;
     private WebDriverWait wait;
+
+    // Logger
+    private Logger logger = LogManager.getLogger(LogManager.ROOT_LOGGER_NAME);
+
+    // Rule
+    @Rule public RunTestRules runTestRules = new RunTestRules(this);
 
     /** Constructor */
     public BaseTest() {
@@ -49,10 +60,6 @@ public class BaseTest {
         return new HomePage(this);
     }
 
-    /** Close site and make driver quit */
-    protected void closeSite() {
-        driver.quit();
-    }
 
     /**
      * Get instance of driver
@@ -70,5 +77,32 @@ public class BaseTest {
      */
     public void waitTillElementIsVisible(WebElement element) {
         wait.until(ExpectedConditions.visibilityOf(element));
+    }
+
+    /**
+     * Write down info message
+     *
+     * @param message
+     */
+    public void log(String message) {
+        logger.info(message);
+    }
+
+    /**
+     * Write down error message
+     *
+     * @param error
+     */
+    public void error(String error) {
+        logger.error(error);
+    }
+
+    /**
+     * Get date and time
+     *
+     * @return
+     */
+    public String getDateTime() {
+        return new SimpleDateFormat("YYYY-MM-dd_HH-mm-ss").format(Calendar.getInstance().getTime());
     }
 }

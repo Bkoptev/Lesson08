@@ -21,9 +21,9 @@ public class DressesPage extends AbstractPage {
         testClass.waitTillElementIsVisible(pageDiv);
     }
 
-    public SummerDresses clickSummerDresses() {
+    public SummerDressesPage clickSummerDresses() {
         testClass.waitTillElementIsVisible(summerDresses);
         summerDresses.click();
-        return new SummerDresses(testClass);
+        return new SummerDressesPage(testClass);
     }
 }
