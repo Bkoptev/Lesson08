@@ -38,6 +38,11 @@ public class MyAccountPage extends AbstractPage {
         return new DressesPage(testClass);
     }
 
+    /**
+     * Go to T-shirts page
+     *
+     * @return instance of T-shirts page
+     */
     public TshirtsPage clickTshirts() {
         testClass.waitTillElementIsVisible(tShirts);
         tShirts.click();

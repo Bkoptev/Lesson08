@@ -10,17 +10,14 @@ public class FadedTshirtPage extends AbstractPage {
     // Expected breadcrumb after clearing it from '<' and spaces
     public String expectedBreadcrumb = "ReturntoHomeWomenTopsT-shirtsFadedShortSleeveT-shirts";
 
-    /**
-     * Breadcrumb webelement with not full path
-     */
+    /** Breadcrumb webelement with path without home page */
     @FindBy(xpath = "//div[@class='breadcrumb clearfix']")
     private WebElement BreadCrumb;
-
 
     /**
      * Constructor
      *
-     * @param testClass
+     * @param testClass the instance of faded t-shirts page
      */
     public FadedTshirtPage(BaseTest testClass) {
         super(testClass);
@@ -29,11 +26,11 @@ public class FadedTshirtPage extends AbstractPage {
 
     // replace getAllCrumbs with cleverer method
 
-    /**
-     * Comparing of breadcrumbs.
-     */
+    /** Comparing of breadcrumbs. */
     public void getAllCrumbs() {
         Assert.assertEquals(
-                "BreadCrumb is not the same", expectedBreadcrumb, "ReturntoHome" + BreadCrumb.getText().replaceAll(">|\\s+", ""));
+                "BreadCrumb is not the same",
+                expectedBreadcrumb,
+                "ReturntoHome" + BreadCrumb.getText().replaceAll(">|\\s+", ""));
     }
 }

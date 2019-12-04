@@ -12,13 +12,18 @@ public class TshirtsPage extends AbstractPage {
     /**
      * Constructor
      *
-     * @param testClass
+     * @param testClass return the instance of T-shirt page
      */
     public TshirtsPage(BaseTest testClass) {
         super(testClass);
         testClass.waitTillElementIsVisible(pageDiv);
     }
 
+    /**
+     * Go to Faded T-shirt Page
+     *
+     * @return instance of Faded T-shirt Page
+     */
     public FadedTshirtPage clickFadedTshirt() {
         testClass.waitTillElementIsVisible(fadedTShirts);
         fadedTShirts.click();

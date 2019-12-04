@@ -9,7 +9,6 @@ import java.util.Collections;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.junit.Rule;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -79,8 +78,6 @@ public class BaseTest {
         wait.until(ExpectedConditions.visibilityOf(element));
     }
 
-
-
     /**
      * Write down info message
      *
@@ -107,6 +104,4 @@ public class BaseTest {
     public String getDateTime() {
         return new SimpleDateFormat("YYYY-MM-dd_HH-mm-ss").format(Calendar.getInstance().getTime());
     }
-
-
 }

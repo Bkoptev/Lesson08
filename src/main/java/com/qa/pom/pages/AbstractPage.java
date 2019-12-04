@@ -68,11 +68,16 @@ public abstract class AbstractPage {
         return new LoginPage(testClass);
     }
 
+    /** Click at 'add to cart' button */
     public void addToCart() {
         addToCartButton.click();
-
     }
 
+    /**
+     * wait for pop up with 'proceed to checkout' button appear and
+     *
+     * @return instance of shopping cart summary page
+     */
     public shoppingCartSummary proceedToCheckout() {
         testClass.waitTillElementIsVisible(proceedToCheckout);
         proceedToCheckout.click();

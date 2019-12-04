@@ -14,13 +14,18 @@ public class DressesPage extends AbstractPage {
     /**
      * Constructor
      *
-     * @param testClass
+     * @param testClass the instance of dresses page
      */
     DressesPage(BaseTest testClass) {
         super(testClass);
         testClass.waitTillElementIsVisible(pageDiv);
     }
 
+    /**
+     * wait for loading button with summer dresses and click on it
+     *
+     * @return instance of summer dresses page
+     */
     public SummerDressesPage clickSummerDresses() {
         testClass.waitTillElementIsVisible(summerDresses);
         summerDresses.click();

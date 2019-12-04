@@ -7,13 +7,13 @@ public enum BreadCrumbCategories {
     TSHIRTS("T-shirts"),
     FADED_SHORT_SLEEVE_TSHIRTS("Faded Short Sleeve T-shirts");
 
-    private String name;
+    private String value;
 
     BreadCrumbCategories(String name) {
-        this.name = name;
+        this.value = name;
     }
 
-    public String getName() {
-        return name;
+    public String getValue() {
+        return value;
     }
 }

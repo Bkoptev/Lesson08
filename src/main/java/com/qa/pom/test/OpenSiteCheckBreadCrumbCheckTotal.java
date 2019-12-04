@@ -46,6 +46,5 @@ public class OpenSiteCheckBreadCrumbCheckTotal extends BaseTest {
 
         shoppingCartSummary.deleteAndVerifyCartIsEmpty();
         log("All goods deleted and message is shown");
-
     }
 }

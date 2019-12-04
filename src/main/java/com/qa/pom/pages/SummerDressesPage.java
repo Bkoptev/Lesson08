@@ -11,6 +11,8 @@ public class SummerDressesPage extends AbstractPage {
     @FindBy(xpath = "//span[@class='heading-counter']")
     private WebElement allProductsInCounter;
 
+    // link which allow to find all products on page by counting <li>
+
     protected String NUM_PRODUCTS = "//ul[@class='product_list grid row']/li";
 
     /**
