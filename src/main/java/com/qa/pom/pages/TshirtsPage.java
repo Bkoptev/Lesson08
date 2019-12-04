@@ -7,8 +7,7 @@ import org.openqa.selenium.support.FindBy;
 public class TshirtsPage extends AbstractPage {
 
     @FindBy(xpath = "//ul[@class='product_list grid row']/li//a[contains(@title,'Short Sleeve')]")
-    private
-    WebElement fadedTShirts;
+    private WebElement fadedTShirts;
 
     /**
      * Constructor
@@ -25,6 +24,4 @@ public class TshirtsPage extends AbstractPage {
         fadedTShirts.click();
         return new FadedTshirtPage(testClass);
     }
-
-
 }

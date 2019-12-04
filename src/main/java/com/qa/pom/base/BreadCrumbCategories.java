@@ -1,6 +1,5 @@
 package com.qa.pom.base;
 
-
 public enum BreadCrumbCategories {
     HOME("Return to Home"),
     WOMEN("Women"),
@@ -12,14 +11,9 @@ public enum BreadCrumbCategories {
 
     BreadCrumbCategories(String name) {
         this.name = name;
-
     }
+
     public String getName() {
         return name;
     }
-
-
-
-
-
 }

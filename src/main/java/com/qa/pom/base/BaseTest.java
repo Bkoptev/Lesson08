@@ -4,15 +4,12 @@ import com.qa.pom.pages.HomePage;
 import com.qa.pom.utils.YamlParser;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
-import java.util.Arrays;
 import java.util.Calendar;
 import java.util.Collections;
-import java.util.List;
-import java.util.stream.Stream;
-
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.junit.Rule;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -64,7 +61,6 @@ public class BaseTest {
         return new HomePage(this);
     }
 
-
     /**
      * Get instance of driver
      *
@@ -82,6 +78,8 @@ public class BaseTest {
     public void waitTillElementIsVisible(WebElement element) {
         wait.until(ExpectedConditions.visibilityOf(element));
     }
+
+
 
     /**
      * Write down info message
@@ -110,10 +108,5 @@ public class BaseTest {
         return new SimpleDateFormat("YYYY-MM-dd_HH-mm-ss").format(Calendar.getInstance().getTime());
     }
 
-
-
-    public void compareBreadCrumb (String expectedBreadcrumb) {
-
-    }
 
 }

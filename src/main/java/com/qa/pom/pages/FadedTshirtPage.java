@@ -14,12 +14,8 @@ public class FadedTshirtPage extends AbstractPage {
      * Breadcrumb webelement with not full path
      */
     @FindBy(xpath = "//div[@class='breadcrumb clearfix']")
-    private
-    WebElement BreadCrumb;
+    private WebElement BreadCrumb;
 
-//    @FindBy(xpath = "//div[@class='breadcrumb clearfix']/*[last()]")
-//    private
-//    WebElement lastCrumb;
 
     /**
      * Constructor
@@ -36,8 +32,8 @@ public class FadedTshirtPage extends AbstractPage {
     /**
      * Comparing of breadcrumbs.
      */
-    public void  getAllCrumbs () {
-        Assert.assertEquals("BreadCrumb is not the same", "ReturntoHome" + BreadCrumb.getText().replaceAll(">|\\s+", "") + "FadedShortSleeveT-shirts", expectedBreadcrumb);
+    public void getAllCrumbs() {
+        Assert.assertEquals(
+                "BreadCrumb is not the same", expectedBreadcrumb, "ReturntoHome" + BreadCrumb.getText().replaceAll(">|\\s+", ""));
     }
-    
 }

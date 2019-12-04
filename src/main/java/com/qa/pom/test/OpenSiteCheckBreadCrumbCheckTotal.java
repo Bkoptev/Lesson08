@@ -1,12 +1,9 @@
 package com.qa.pom.test;
 
 import com.qa.pom.base.BaseTest;
-import com.qa.pom.base.BreadCrumbCategories;
 import com.qa.pom.pages.*;
-import org.junit.Test;
-
 import java.io.IOException;
-import java.util.Arrays;
+import org.junit.Test;
 
 public class OpenSiteCheckBreadCrumbCheckTotal extends BaseTest {
 
@@ -34,13 +31,21 @@ public class OpenSiteCheckBreadCrumbCheckTotal extends BaseTest {
         FadedTshirtPage fadedTshirtPage = tshirtsPage.clickFadedTshirt();
         log("Clicked on faded T-shirts");
 
-        //Comparing BreadCrumbs
+        // Comparing BreadCrumbs
         fadedTshirtPage.getAllCrumbs();
         log("Compared expected BreadCrumb with current");
 
+        fadedTshirtPage.addToCart();
+        log("Tshirt was added to cart");
 
+        shoppingCartSummary shoppingCartSummary = fadedTshirtPage.proceedToCheckout();
+        log("Clicked  Proceed to checkout button");
 
+        shoppingCartSummary.comparePrice();
+        log("Price before increasing the amount of goods compared to prise after increasing");
 
+        shoppingCartSummary.deleteAndVerifyCartIsEmpty();
+        log("All goods deleted and message is shown");
 
     }
 }

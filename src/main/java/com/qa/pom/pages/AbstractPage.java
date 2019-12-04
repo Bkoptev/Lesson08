@@ -13,30 +13,32 @@ public abstract class AbstractPage {
     // Web elements with @FindBy annotation
     //
     @FindBy(xpath = "//a[@class='login']")
-    private
-    WebElement loginLink;
+    private WebElement loginLink;
 
     @FindBy(xpath = "//div[@id='page']")
-    protected
-    WebElement pageDiv;
+    protected WebElement pageDiv;
 
     @FindBy(xpath = "//button[@id='SubmitLogin']/span")
-    protected
-    WebElement submitButton;
+    protected WebElement submitButton;
 
     @FindBy(xpath = "//a[@class='logout']")
-    private
-    WebElement logOutButton;
+    private WebElement logOutButton;
 
     @FindBy(
             xpath =
                     "//li[@id='category-thumbnail']/../../following-sibling::li/a[@title='Dresses']")
-    protected
-    WebElement Dresses;
+    protected WebElement Dresses;
 
-    @FindBy(xpath = "//li[@id='category-thumbnail']/../../following-sibling::*[2]/a[@title='T-shirts']")
-    protected
-    WebElement tShirts;
+    @FindBy(
+            xpath =
+                    "//li[@id='category-thumbnail']/../../following-sibling::*[2]/a[@title='T-shirts']")
+    protected WebElement tShirts;
+
+    @FindBy(xpath = "//p[@id='add_to_cart']//span")
+    private WebElement addToCartButton;
+
+    @FindBy(xpath = "//div[@class='clearfix']//a[@title='Proceed to checkout']")
+    private WebElement proceedToCheckout;
 
     /** Constructor */
     public AbstractPage(BaseTest testClass) {
@@ -64,5 +66,16 @@ public abstract class AbstractPage {
     public LoginPage signOut() {
         logOutButton.click();
         return new LoginPage(testClass);
+    }
+
+    public void addToCart() {
+        addToCartButton.click();
+
+    }
+
+    public shoppingCartSummary proceedToCheckout() {
+        testClass.waitTillElementIsVisible(proceedToCheckout);
+        proceedToCheckout.click();
+        return new shoppingCartSummary(testClass);
     }
 }
