@@ -34,8 +34,9 @@ public class OpenSiteCheckBreadCrumbCheckTotal extends BaseTest {
         FadedTshirtPage fadedTshirtPage = tshirtsPage.clickFadedTshirt();
         log("Clicked on faded T-shirts");
 
-        BaseTest baseTest = new BaseTest();
-
+        //Comparing BreadCrumbs
+        fadedTshirtPage.getAllCrumbs();
+        log("Compared expected BreadCrumb with current");
 
 
 
