@@ -3,13 +3,8 @@ package com.qa.pom.pages;
 import com.qa.pom.base.BaseTest;
 import org.junit.Assert;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindBy;
 
 public class SummerDressesPage extends AbstractPage {
-
-    @FindBy(xpath = "//span[@class='heading-counter']")
-    private WebElement allProductsInCounter;
 
     // link which allow to find all products on page by counting <li>
 
@@ -27,15 +22,13 @@ public class SummerDressesPage extends AbstractPage {
 
     /** Find amount of goods and compare it with number in goods counter */
     public void compareGoodsAmount() {
-
-        Assert.assertEquals(
-                "Amount is not the same",
-                Integer.parseInt(allProductsInCounter.getText().replaceAll("\\D+", "")),
-                testClass.getDriver().findElements(By.xpath(NUM_PRODUCTS)).size());
+        int count = Integer.parseInt(allProductsInCounter.getText().replaceAll("\\D+", ""));
+        int numOfProducts = testClass.getDriver().findElements(By.xpath(NUM_PRODUCTS)).size();
+        Assert.assertEquals("Amount is not the same", count, numOfProducts);
         testClass.log(
                 "Number of products in counter "
-                        + Integer.parseInt(allProductsInCounter.getText().replaceAll("\\D+", ""))
+                        + count
                         + "; Number of products on page"
-                        + testClass.getDriver().findElements(By.xpath(NUM_PRODUCTS)).size());
+                        + numOfProducts);
     }
 }

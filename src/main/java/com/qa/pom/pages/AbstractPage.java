@@ -40,6 +40,9 @@ public abstract class AbstractPage {
     @FindBy(xpath = "//div[@class='clearfix']//a[@title='Proceed to checkout']")
     private WebElement proceedToCheckout;
 
+    @FindBy(xpath = "//span[@class='heading-counter']")
+    public WebElement allProductsInCounter;
+
     /** Constructor */
     public AbstractPage(BaseTest testClass) {
         this.testClass = testClass;
