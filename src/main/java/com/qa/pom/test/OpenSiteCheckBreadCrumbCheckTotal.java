@@ -1,6 +1,7 @@
 package com.qa.pom.test;
 
 import com.qa.pom.base.BaseTest;
+import com.qa.pom.base.BreadCrumbCategories;
 import com.qa.pom.pages.*;
 import java.io.IOException;
 import org.junit.Test;
@@ -32,7 +33,7 @@ public class OpenSiteCheckBreadCrumbCheckTotal extends BaseTest {
         log("Clicked on faded T-shirts");
 
         // Comparing BreadCrumbs
-        fadedTshirtPage.getAllCrumbs();
+        fadedTshirtPage.getAllCrumbs(BreadCrumbCategories.stringOfCategories());
         log("Compared expected BreadCrumb with current");
 
         fadedTshirtPage.addToCart();

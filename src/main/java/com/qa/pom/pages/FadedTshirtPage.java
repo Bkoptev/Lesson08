@@ -7,9 +7,6 @@ import org.openqa.selenium.support.FindBy;
 
 public class FadedTshirtPage extends AbstractPage {
 
-    // Expected breadcrumb after clearing it from '<' and spaces
-    public String expectedBreadcrumb = "ReturntoHomeWomenTopsT-shirtsFadedShortSleeveT-shirts";
-
     /** Breadcrumb webelement with path without home page */
     @FindBy(xpath = "//div[@class='breadcrumb clearfix']")
     private WebElement BreadCrumb;
@@ -24,13 +21,15 @@ public class FadedTshirtPage extends AbstractPage {
         testClass.waitTillElementIsVisible(pageDiv);
     }
 
-    // replace getAllCrumbs with cleverer method
-
-    /** Comparing of breadcrumbs. */
-    public void getAllCrumbs() {
+    /**
+     * Get string with expected bread crumb and compare
+     *
+     * @param s string from ENUM with expected breadcrumb
+     */
+    public void getAllCrumbs(String s) {
         Assert.assertEquals(
                 "BreadCrumb is not the same",
-                expectedBreadcrumb,
+                s.replaceAll(",|\\s+", ""),
                 "ReturntoHome" + BreadCrumb.getText().replaceAll(">|\\s+", ""));
     }
 }

@@ -30,17 +30,11 @@ public class SummerDressesPage extends AbstractPage {
 
         Assert.assertEquals(
                 "Amount is not the same",
-                Integer.parseInt(
-                        allProductsInCounter
-                                .getText()
-                                .replaceAll("^.*?(-?\\d+(\\.\\d+)?).*$", "$1")),
+                Integer.parseInt(allProductsInCounter.getText().replaceAll("\\D+", "")),
                 testClass.getDriver().findElements(By.xpath(NUM_PRODUCTS)).size());
         testClass.log(
                 "Number of products in counter "
-                        + Integer.parseInt(
-                                allProductsInCounter
-                                        .getText()
-                                        .replaceAll("^.*?(-?\\d+(\\.\\d+)?).*$", "$1"))
+                        + Integer.parseInt(allProductsInCounter.getText().replaceAll("\\D+", ""))
                         + "; Number of products on page"
                         + testClass.getDriver().findElements(By.xpath(NUM_PRODUCTS)).size());
     }
