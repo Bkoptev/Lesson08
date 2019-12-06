@@ -1,4 +1,4 @@
-package com.qa.pom.base;
+package com.qa.pom.enums;
 
 public enum BreadCrumbCategories {
     HOME("Return to Home"),

@@ -5,7 +5,7 @@ import org.junit.Assert;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-public class shoppingCartSummary extends AbstractPage {
+public class ShoppingCartSummary extends AbstractPage {
 
     @FindBy(xpath = "//div[contains(@class,'cart_quantity_button')]//a[@title='Add']")
     private WebElement addOneItem;
@@ -29,7 +29,7 @@ public class shoppingCartSummary extends AbstractPage {
      *
      * @param testClass return instance of shopping cart summary
      */
-    public shoppingCartSummary(BaseTest testClass) {
+    public ShoppingCartSummary(BaseTest testClass) {
         super(testClass);
         testClass.waitTillElementIsVisible(pageDiv);
     }

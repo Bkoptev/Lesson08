@@ -31,7 +31,7 @@ public abstract class AbstractPage {
 
     @FindBy(
             xpath =
-                    "//li[@id='category-thumbnail']/../../following-sibling::*[2]/a[@title='T-shirts']")
+                    "//li[@id='category-thumbnail']/../../following-sibling::*/a[@title='T-shirts']")
     protected WebElement tShirts;
 
     @FindBy(xpath = "//p[@id='add_to_cart']//span")
@@ -81,9 +81,9 @@ public abstract class AbstractPage {
      *
      * @return instance of shopping cart summary page
      */
-    public shoppingCartSummary proceedToCheckout() {
+    public ShoppingCartSummary proceedToCheckout() {
         testClass.waitTillElementIsVisible(proceedToCheckout);
         proceedToCheckout.click();
-        return new shoppingCartSummary(testClass);
+        return new ShoppingCartSummary(testClass);
     }
 }

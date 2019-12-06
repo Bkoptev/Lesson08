@@ -1,7 +1,7 @@
 package com.qa.pom.test;
 
 import com.qa.pom.base.BaseTest;
-import com.qa.pom.base.BreadCrumbCategories;
+import com.qa.pom.enums.BreadCrumbCategories;
 import com.qa.pom.pages.*;
 import java.io.IOException;
 import org.junit.Test;
@@ -39,7 +39,7 @@ public class OpenSiteCheckBreadCrumbCheckTotal extends BaseTest {
         fadedTshirtPage.addToCart();
         log("Tshirt was added to cart");
 
-        shoppingCartSummary shoppingCartSummary = fadedTshirtPage.proceedToCheckout();
+        ShoppingCartSummary shoppingCartSummary = fadedTshirtPage.proceedToCheckout();
         log("Clicked  Proceed to checkout button");
 
         shoppingCartSummary.comparePrice();
