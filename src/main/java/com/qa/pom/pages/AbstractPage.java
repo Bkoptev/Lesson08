@@ -24,16 +24,6 @@ public abstract class AbstractPage {
     @FindBy(xpath = "//a[@class='logout']")
     private WebElement logOutButton;
 
-    @FindBy(
-            xpath =
-                    "//li[@id='category-thumbnail']/../../following-sibling::li/a[@title='Dresses']")
-    protected WebElement Dresses;
-
-    @FindBy(
-            xpath =
-                    "//li[@id='category-thumbnail']/../../following-sibling::*/a[@title='T-shirts']")
-    protected WebElement tShirts;
-
     @FindBy(xpath = "//p[@id='add_to_cart']//span")
     private WebElement addToCartButton;
 
@@ -42,6 +32,9 @@ public abstract class AbstractPage {
 
     @FindBy(xpath = "//span[@class='heading-counter']")
     public WebElement allProductsInCounter;
+
+    @FindBy(xpath = "//div[@class='breadcrumb clearfix']")
+    public WebElement BreadCrumb;
 
     /** Constructor */
     public AbstractPage(BaseTest testClass) {

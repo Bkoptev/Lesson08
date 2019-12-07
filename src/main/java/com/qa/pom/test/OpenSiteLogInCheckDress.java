@@ -19,18 +19,18 @@ public class OpenSiteLogInCheckDress extends BaseTest {
         log("Clicked on Sign In button");
 
         // Log in
-        MyAccountPage myAccountPage = loginPage.logIn();
+        MyAccountPage categoryPage = loginPage.logIn();
         log("Entered email and password on log in page and submit them");
 
         // Go to dresses page
-        DressesPage dressesPage = myAccountPage.clickDresses();
+        CategoryPage dressesPage = categoryPage.clickProductCategory(AbstractCategoryList.Dresses);
         log("Clicked on Dresses");
 
         // Go to summer dresses page
-        SummerDressesPage summerDressesPage = dressesPage.clickSummerDresses();
+        ProductListPage summerDresses = dressesPage.clickProductList(AbstractProductsList.summerDresses);
         log("Clicked on Summer Dresses");
 
         // Compare the amount of goods and compare it with number in goods counter
-        summerDressesPage.compareGoodsAmount();
+        summerDresses.compareGoodsAmount();
     }
 }

@@ -9,8 +9,7 @@ public class FadedTshirtPage extends AbstractPage {
 
     // Breadcrumb webelement with path without home page
 
-    @FindBy(xpath = "//div[@class='breadcrumb clearfix']")
-    private WebElement BreadCrumb;
+
 
     /**
      * Constructor
