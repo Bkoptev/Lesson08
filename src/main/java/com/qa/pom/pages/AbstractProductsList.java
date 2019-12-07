@@ -5,8 +5,9 @@ import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 
-public class AbstractProductsList extends AbstractPage{
+public abstract class AbstractProductsList extends AbstractPage{
 
     // link which allow to find all products on page by counting <li>
     public String NUM_PRODUCTS = "//ul[@class='product_list grid row']/li";

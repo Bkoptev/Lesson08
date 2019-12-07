@@ -3,6 +3,7 @@ package com.qa.pom.pages;
 import com.qa.pom.base.BaseTest;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 
 public abstract class AbstractCategoryList extends AbstractPage{
 
