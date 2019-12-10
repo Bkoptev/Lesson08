@@ -12,7 +12,7 @@ public class OpenSiteCheckBreadCrumbCheckTotal extends BaseTest {
 
     /** Open site and log in. Verify name. Log put and check the log in page. */
     @Test
-    public void testOpenSiteAndCHeckDressesTest() throws IOException {
+    public void testOpenSiteAndCHeckBreadCrumbCheckTotalTest() throws IOException {
 
         // Initialize HomePage
         HomePage homePage = openSite();

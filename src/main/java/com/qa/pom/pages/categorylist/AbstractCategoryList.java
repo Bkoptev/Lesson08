@@ -2,10 +2,13 @@ package com.qa.pom.pages.categorylist;
 
 import com.qa.pom.base.BaseTest;
 import com.qa.pom.pages.AbstractPage;
+import com.qa.pom.pages.productlist.EveningDressesProductList;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 
 public abstract class AbstractCategoryList extends AbstractPage {
+
 
     @FindBy(
             xpath =
@@ -21,6 +24,17 @@ public abstract class AbstractCategoryList extends AbstractPage {
             xpath =
                     "//div[@id='categories_block_left']//ul[@class='tree dynamized']//a[contains (text(),'Summer Dresses')]")
     public WebElement summerDresses;
+
+    @FindBy(
+            xpath =
+                    "//a[@class='sf-with-ul' and @title='Women']")
+    public WebElement women;
+
+    @FindBy(
+            xpath =
+                    "//ul[contains(@class,'submenu-container')]//ul//a[@title='Evening Dresses']")
+    public WebElement eveningDresses;
+
 
     /**
      * Constructor
@@ -42,6 +56,7 @@ public abstract class AbstractCategoryList extends AbstractPage {
         Dresses.click();
         return new DressesCategory(testClass);
     }
+
     /**
      * wait for loading button with Tshirts Category list and click on it
      *
@@ -52,4 +67,15 @@ public abstract class AbstractCategoryList extends AbstractPage {
         tShirts.click();
         return new TshirtsCategory(testClass);
     }
+
+    public void focusAtWomenCategory() {
+        testClass.actions.moveToElement(women);
+    }
+
+    public EveningDressesProductList clickEveningDressesProductList() {
+        testClass.waitTillElementIsVisible(eveningDresses);
+        eveningDresses.click();
+        return new EveningDressesProductList(testClass);
+    }
+
 }
