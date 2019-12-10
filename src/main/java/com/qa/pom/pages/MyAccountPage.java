@@ -1,6 +1,7 @@
 package com.qa.pom.pages;
 
 import com.qa.pom.base.BaseTest;
+import com.qa.pom.pages.categorylist.AbstractCategoryList;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 
@@ -26,7 +27,4 @@ public class MyAccountPage extends AbstractCategoryList {
                 REG_NAME,
                 testClass.getDriver().findElement(By.xpath(NAME_XPATH)).getText());
     }
-
-
-
 }

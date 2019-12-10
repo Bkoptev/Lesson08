@@ -17,19 +17,4 @@ public enum BreadCrumbCategories {
 
         return value;
     }
-
-    /**
-     * Generate string with expected breadcrumb
-     *
-     * @return string with expected breadcrumb
-     */
-    public static String stringOfCategories() {
-        String s;
-        return s =
-                BreadCrumbCategories.HOME.getValue()
-                        + BreadCrumbCategories.WOMEN.getValue()
-                        + BreadCrumbCategories.TOPS.getValue()
-                        + BreadCrumbCategories.TSHIRTS.getValue()
-                        + BreadCrumbCategories.FADED_SHORT_SLEEVE_TSHIRTS.getValue();
-    }
 }

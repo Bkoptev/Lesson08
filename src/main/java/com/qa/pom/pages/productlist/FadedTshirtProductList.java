@@ -1,22 +1,16 @@
-package com.qa.pom.pages;
+package com.qa.pom.pages.productlist;
 
 import com.qa.pom.base.BaseTest;
 import org.junit.Assert;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindBy;
 
-public class FadedTshirtPage extends AbstractPage {
-
-    // Breadcrumb webelement with path without home page
-
-
+public class FadedTshirtProductList extends AbstractProductsList {
 
     /**
      * Constructor
      *
      * @param testClass the instance of faded t-shirts page
      */
-    public FadedTshirtPage(BaseTest testClass) {
+    public FadedTshirtProductList(BaseTest testClass) {
         super(testClass);
         testClass.waitTillElementIsVisible(pageDiv);
     }
@@ -27,6 +21,7 @@ public class FadedTshirtPage extends AbstractPage {
      * @param s string from ENUM with expected breadcrumb
      */
     public void getAllCrumbs(String s) {
+        testClass.waitTillElementIsVisible(addToCartButton);
         Assert.assertEquals(
                 "BreadCrumb is not the same",
                 s.replaceAll(",|\\s+", ""),

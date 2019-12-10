@@ -7,7 +7,7 @@ import org.openqa.selenium.support.PageFactory;
 
 public abstract class AbstractPage {
 
-    BaseTest testClass;
+    protected BaseTest testClass;
 
     //
     // Web elements with @FindBy annotation
@@ -16,7 +16,7 @@ public abstract class AbstractPage {
     private WebElement loginLink;
 
     @FindBy(xpath = "//div[@id='page']")
-    protected WebElement pageDiv;
+    public WebElement pageDiv;
 
     @FindBy(xpath = "//button[@id='SubmitLogin']/span")
     protected WebElement submitButton;
@@ -25,7 +25,7 @@ public abstract class AbstractPage {
     private WebElement logOutButton;
 
     @FindBy(xpath = "//p[@id='add_to_cart']//span")
-    private WebElement addToCartButton;
+    protected WebElement addToCartButton;
 
     @FindBy(xpath = "//div[@class='clearfix']//a[@title='Proceed to checkout']")
     private WebElement proceedToCheckout;
@@ -33,6 +33,7 @@ public abstract class AbstractPage {
     @FindBy(xpath = "//span[@class='heading-counter']")
     public WebElement allProductsInCounter;
 
+    // Breadcrumb webelement with path without home page
     @FindBy(xpath = "//div[@class='breadcrumb clearfix']")
     public WebElement BreadCrumb;
 
