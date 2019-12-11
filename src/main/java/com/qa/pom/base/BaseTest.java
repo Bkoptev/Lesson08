@@ -23,6 +23,7 @@ public class BaseTest {
 
     private WebDriver driver;
     private WebDriverWait wait;
+    public Actions actions;
 
 
     // Logger
@@ -51,6 +52,7 @@ public class BaseTest {
         driver.manage().window().maximize();
 
         wait = new WebDriverWait(driver, 10);
+        actions = new Actions(driver);
     }
 
     /**
@@ -75,7 +77,7 @@ public class BaseTest {
     public WebDriver getDriver() {
         return driver;
     }
-    public Actions actions = new Actions(getDriver());
+
 
     /**
      * Wait till element is visible

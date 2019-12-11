@@ -27,7 +27,7 @@ public abstract class AbstractCategoryList extends AbstractPage {
 
     @FindBy(
             xpath =
-                    "//a[@class='sf-with-ul' and @title='Women']")
+                    "//a[@class='sf-with-ul' and @title='Women']/..")
     public WebElement women;
 
     @FindBy(
@@ -69,6 +69,7 @@ public abstract class AbstractCategoryList extends AbstractPage {
     }
 
     public void focusAtWomenCategory() {
+        testClass.waitTillElementIsVisible(women);
         testClass.actions.moveToElement(women);
     }
 
