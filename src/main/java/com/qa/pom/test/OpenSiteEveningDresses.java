@@ -29,7 +29,13 @@ public class OpenSiteEveningDresses extends BaseTest {
         EveningDressesProductList eveningDressesProductList = myAccountPage.clickEveningDressesProductList();
         log("Waited for Evening Dresses and click on it");
 
-        PrintedDress printedDress = eveningDressesProductList.openInNewTabAndSwitch(printedDress);
+        PrintedDress printedDress = eveningDressesProductList.openInNewTabAndSwitch(eveningDressesProductList.printedDres);
+        log("Open printed dress product in new tab and switch on it");
+
+        printedDress.chooseColor();
+        printedDress.chooseSizeL();
+        printedDress.addToCart();
+
 
     }
 }

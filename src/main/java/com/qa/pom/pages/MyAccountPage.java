@@ -1,11 +1,11 @@
 package com.qa.pom.pages;
 
 import com.qa.pom.base.BaseTest;
-import com.qa.pom.pages.categorylist.AbstractCategoryList;
+import com.qa.pom.pages.category.AbstractCategory;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 
-public class MyAccountPage extends AbstractCategoryList {
+public class MyAccountPage extends AbstractCategory {
 
     private String REG_NAME = "Test QA";
     private String NAME_XPATH = "//a[@class='account']/span";

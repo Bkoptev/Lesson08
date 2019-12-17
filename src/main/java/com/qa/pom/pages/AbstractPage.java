@@ -1,6 +1,7 @@
 package com.qa.pom.pages;
 
 import com.qa.pom.base.BaseTest;
+import com.qa.pom.pages.productlist.product.PrintedDress;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -90,7 +91,7 @@ public abstract class AbstractPage {
         return new ShoppingCartSummary(testClass);
     }
 
-    public void openInNewTabAndSwitch (WebElement webElement) {
+    public PrintedDress openInNewTabAndSwitch (WebElement webElement) {
         String actualWindow = testClass.getDriver().getWindowHandle();
         webElement.sendKeys(Keys.chord(Keys.CONTROL, Keys.RETURN));
 
@@ -102,5 +103,6 @@ public abstract class AbstractPage {
             }
         }
         testClass.getDriver().switchTo().window(newWindow);
+        return new PrintedDress(testClass);
     }
 }

@@ -10,7 +10,7 @@ public class EveningDressesProductList extends AbstractProductsList{
     @FindBy(
             xpath =
                     "//h5[@itemprop='name']/a")
-    public WebElement printedDress;
+    public WebElement printedDres;
 
     //public String PRINTED_DRESS = "//h5[@itemprop='name']/a";
 

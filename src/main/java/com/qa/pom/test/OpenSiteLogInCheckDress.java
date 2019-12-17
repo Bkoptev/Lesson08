@@ -2,7 +2,7 @@ package com.qa.pom.test;
 
 import com.qa.pom.base.BaseTest;
 import com.qa.pom.pages.*;
-import com.qa.pom.pages.categorylist.DressesCategory;
+import com.qa.pom.pages.category.DressesCategory;
 import com.qa.pom.pages.productlist.SummerDressesProductList;
 import java.io.IOException;
 import org.junit.Test;

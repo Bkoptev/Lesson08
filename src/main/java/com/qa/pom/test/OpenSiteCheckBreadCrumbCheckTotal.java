@@ -3,7 +3,7 @@ package com.qa.pom.test;
 import com.qa.pom.base.BaseTest;
 import com.qa.pom.enums.BreadCrumbCategories;
 import com.qa.pom.pages.*;
-import com.qa.pom.pages.categorylist.TshirtsCategory;
+import com.qa.pom.pages.category.TshirtsCategory;
 import com.qa.pom.pages.productlist.FadedTshirtProductList;
 import java.io.IOException;
 import org.junit.Test;

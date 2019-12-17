@@ -1,9 +1,9 @@
-package com.qa.pom.pages.categorylist;
+package com.qa.pom.pages.category;
 
 import com.qa.pom.base.BaseTest;
 import com.qa.pom.pages.productlist.SummerDressesProductList;
 
-public class DressesCategory extends AbstractCategoryList {
+public class DressesCategory extends AbstractCategory {
     /**
      * Constructor
      *

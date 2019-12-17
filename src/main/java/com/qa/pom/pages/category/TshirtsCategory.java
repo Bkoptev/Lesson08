@@ -1,4 +1,4 @@
-package com.qa.pom.pages.categorylist;
+package com.qa.pom.pages.category;
 
 import com.qa.pom.base.BaseTest;
 import com.qa.pom.pages.AbstractPage;

@@ -1,13 +1,12 @@
-package com.qa.pom.pages.categorylist;
+package com.qa.pom.pages.category;
 
 import com.qa.pom.base.BaseTest;
 import com.qa.pom.pages.AbstractPage;
 import com.qa.pom.pages.productlist.EveningDressesProductList;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 
-public abstract class AbstractCategoryList extends AbstractPage {
+public abstract class AbstractCategory extends AbstractPage {
 
 
     @FindBy(
@@ -41,7 +40,7 @@ public abstract class AbstractCategoryList extends AbstractPage {
      *
      * @param testClass
      */
-    public AbstractCategoryList(BaseTest testClass) {
+    public AbstractCategory(BaseTest testClass) {
         super(testClass);
         testClass.waitTillElementIsVisible(pageDiv);
     }
