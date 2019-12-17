@@ -1,10 +1,13 @@
 package com.qa.pom.pages;
 
 import com.qa.pom.base.BaseTest;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+
+import java.util.Set;
 
 public abstract class AbstractPage {
 
@@ -85,5 +88,19 @@ public abstract class AbstractPage {
         testClass.waitTillElementIsVisible(proceedToCheckout);
         proceedToCheckout.click();
         return new ShoppingCartSummary(testClass);
+    }
+
+    public void openInNewTabAndSwitch (WebElement webElement) {
+        String actualWindow = testClass.getDriver().getWindowHandle();
+        webElement.sendKeys(Keys.chord(Keys.CONTROL, Keys.RETURN));
+
+        Set<String> windows = testClass.getDriver().getWindowHandles();
+        String newWindow = null;
+        for (String window : windows) {
+            if (!window.equals(actualWindow)) {
+                newWindow = window;
+            }
+        }
+        testClass.getDriver().switchTo().window(newWindow);
     }
 }

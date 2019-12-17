@@ -68,12 +68,8 @@ public abstract class AbstractCategoryList extends AbstractPage {
         return new TshirtsCategory(testClass);
     }
 
-    public void focusAtWomenCategory() {
-        testClass.waitTillElementIsVisible(women);
-        testClass.actions.moveToElement(women);
-    }
-
     public EveningDressesProductList clickEveningDressesProductList() {
+        testClass.actions.moveToElement(women).perform();
         testClass.waitTillElementIsVisible(eveningDresses);
         eveningDresses.click();
         return new EveningDressesProductList(testClass);

@@ -5,6 +5,7 @@ import com.qa.pom.pages.HomePage;
 import com.qa.pom.pages.LoginPage;
 import com.qa.pom.pages.MyAccountPage;
 import com.qa.pom.pages.productlist.EveningDressesProductList;
+import com.qa.pom.pages.productlist.product.PrintedDress;
 import org.junit.Test;
 
 import java.io.IOException;
@@ -25,12 +26,11 @@ public class OpenSiteEveningDresses extends BaseTest {
         MyAccountPage myAccountPage = loginPage.logIn();
         log("Entered email and password on log in page and submit them");
 
-        //navigate to Women category
-        myAccountPage.focusAtWomenCategory();
-        log("Focused on Women Category");
-
         EveningDressesProductList eveningDressesProductList = myAccountPage.clickEveningDressesProductList();
         log("Waited for Evening Dresses and click on it");
+
+        PrintedDress printedDress = eveningDressesProductList.openInNewTabAndSwitch(printedDress);
+
     }
 }
 
