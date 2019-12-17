@@ -35,6 +35,7 @@ public class OpenSiteEveningDresses extends BaseTest {
         printedDress.chooseColor();
         printedDress.chooseSizeL();
         printedDress.addToCart();
+        printedDress.continueShopping();
 
 
     }

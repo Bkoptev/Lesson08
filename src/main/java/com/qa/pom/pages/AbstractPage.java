@@ -36,6 +36,9 @@ public abstract class AbstractPage {
     @FindBy(xpath = "//div[@class='clearfix']//a[@title='Proceed to checkout']")
     private WebElement proceedToCheckout;
 
+    @FindBy(xpath = "//div[@class='clearfix']//span[@title='Continue shopping']/span")
+    private WebElement continueShopping;
+
     @FindBy(xpath = "//span[@class='heading-counter']")
     public WebElement allProductsInCounter;
 
@@ -89,6 +92,11 @@ public abstract class AbstractPage {
         testClass.waitTillElementIsVisible(proceedToCheckout);
         proceedToCheckout.click();
         return new ShoppingCartSummary(testClass);
+    }
+
+    public void continueShopping() {
+        testClass.waitTillElementIsVisible(continueShopping);
+        continueShopping.click();
     }
 
     public PrintedDress openInNewTabAndSwitch (WebElement webElement) {
