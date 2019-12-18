@@ -51,7 +51,7 @@ public class BaseTest {
 
         driver.manage().window().maximize();
 
-        wait = new WebDriverWait(driver, 10);
+        wait = new WebDriverWait(driver, 15);
         actions = new Actions(driver);
     }
 

@@ -1,7 +1,9 @@
 package com.qa.pom.pages;
 
 import com.qa.pom.base.BaseTest;
+import com.qa.pom.pages.productlist.EveningDressesProductList;
 import com.qa.pom.pages.productlist.product.PrintedDress;
+import org.junit.Assert;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -45,6 +47,20 @@ public abstract class AbstractPage {
     // Breadcrumb webelement with path without home page
     @FindBy(xpath = "//div[@class='breadcrumb clearfix']")
     public WebElement BreadCrumb;
+
+    // Focus at shopping cart
+    @FindBy(xpath = "//div[@class='shopping_cart']/a")
+    public WebElement shoppingCart;
+
+    @FindBy(xpath = "//div[@class='product-atributes']/a")
+    public WebElement itemAttributes;
+
+    @FindBy(xpath = "//span[@class='remove_link']/a")
+    public WebElement removeItem;
+
+    @FindBy(xpath = "//span[contains(@class,'ajax_cart_no_product')]")
+    public WebElement cartEmpty;
+
 
     /**
      * Constructor
@@ -99,7 +115,7 @@ public abstract class AbstractPage {
         continueShopping.click();
     }
 
-    public PrintedDress openInNewTabAndSwitch (WebElement webElement) {
+    public PrintedDress openInNewTabAndSwitch(WebElement webElement) {
         String actualWindow = testClass.getDriver().getWindowHandle();
         webElement.sendKeys(Keys.chord(Keys.CONTROL, Keys.RETURN));
 
@@ -112,5 +128,28 @@ public abstract class AbstractPage {
         }
         testClass.getDriver().switchTo().window(newWindow);
         return new PrintedDress(testClass);
+    }
+
+    public void focusOnCartAndCheckColorAndSize(String s) {
+        testClass.actions.moveToElement(shoppingCart).perform();
+        testClass.waitTillElementIsVisible(itemAttributes);
+        Assert.assertEquals(
+                "Color or size is not the same",
+                s.replaceAll(",|\\s+", ""),
+                itemAttributes.getText().replaceAll(",|\\s+", ""));
+    }
+
+    public void checkCartIsEmpty() {
+        testClass.waitTillElementIsVisible(cartEmpty);
+        String s = "(empty)";
+        Assert.assertEquals(
+                "Color or size is not the same",
+                s.replaceAll(",|\\s+", ""),
+                cartEmpty.getText().replaceAll(",|\\s+", ""));
+    }
+
+    public void removeItem() {
+        testClass.waitTillElementIsVisible(removeItem);
+        removeItem.click();
     }
 }

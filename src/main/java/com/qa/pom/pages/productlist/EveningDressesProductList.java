@@ -12,8 +12,6 @@ public class EveningDressesProductList extends AbstractProductsList{
                     "//h5[@itemprop='name']/a")
     public WebElement printedDres;
 
-    //public String PRINTED_DRESS = "//h5[@itemprop='name']/a";
-
     /**
      * Constructor
      *
@@ -23,10 +21,4 @@ public class EveningDressesProductList extends AbstractProductsList{
         super(testClass);
         testClass.waitTillElementIsVisible(pageDiv);
     }
-
-//    public PrintedDress clickProduct(WebElement productList) {
-//        testClass.waitTillElementIsVisible(productList);
-//        productList.click();
-//        return new PrintedDress(testClass);
-//    }
 }

@@ -1,6 +1,7 @@
 package com.qa.pom.test;
 
 import com.qa.pom.base.BaseTest;
+import com.qa.pom.enums.SizeAndColor;
 import com.qa.pom.pages.HomePage;
 import com.qa.pom.pages.LoginPage;
 import com.qa.pom.pages.MyAccountPage;
@@ -33,9 +34,29 @@ public class OpenSiteEveningDresses extends BaseTest {
         log("Open printed dress product in new tab and switch on it");
 
         printedDress.chooseColor();
+        log("Chosen pink colour");
+
         printedDress.chooseSizeL();
+        log("Chosen 'L' size");
+
         printedDress.addToCart();
+        log("Dress added to cart");
+
         printedDress.continueShopping();
+        log("Continue shopping button clicked");
+
+        printedDress.focusOnCartAndCheckColorAndSize(SizeAndColor.PINK.getValue() + SizeAndColor.L.getValue());
+        log("Pink color and size L verified");
+
+        printedDress.removeItem();
+        log("Item removed from cart");
+
+        printedDress.checkCartIsEmpty();
+        log("Verified that cart is empty");
+
+
+
+
 
 
     }
