@@ -1,12 +1,11 @@
 package com.qa.pom.pages;
 
 import com.qa.pom.base.BaseTest;
-import com.qa.pom.pages.productlist.EveningDressesProductList;
 import com.qa.pom.pages.productlist.product.PrintedDress;
 import org.junit.Assert;
+import org.openqa.selenium.Cookie;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
@@ -129,6 +128,20 @@ public abstract class AbstractPage {
         testClass.getDriver().switchTo().window(newWindow);
         return new PrintedDress(testClass);
     }
+
+    public void closeTab() {
+       testClass.getDriver().close();
+    }
+
+    public void switchToActiveTab() {
+        String activeWindow = testClass.getDriver().getWindowHandle();
+        testClass.getDriver().switchTo().window(activeWindow);
+    }
+
+    public Set<Cookie> returnAllCookies() {
+        return testClass.getDriver().manage().getCookies();
+    }
+
 
     public void focusOnCartAndCheckColorAndSize(String s) {
         testClass.actions.moveToElement(shoppingCart).perform();

@@ -54,6 +54,16 @@ public class OpenSiteEveningDresses extends BaseTest {
         printedDress.checkCartIsEmpty();
         log("Verified that cart is empty");
 
+        printedDress.closeTab();
+        log("Tab was closed");
+
+        eveningDressesProductList.switchToActiveTab();
+        log("Switched to active tab");
+
+        System.out.println(printedDress.returnAllCookies());
+
+
+
 
 
 
