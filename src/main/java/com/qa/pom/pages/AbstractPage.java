@@ -2,6 +2,7 @@ package com.qa.pom.pages;
 
 import com.qa.pom.base.BaseTest;
 import com.qa.pom.pages.productlist.product.PrintedDress;
+import java.util.Set;
 import org.junit.Assert;
 import org.openqa.selenium.Cookie;
 import org.openqa.selenium.Keys;
@@ -9,12 +10,11 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-import java.util.Set;
-
 public abstract class AbstractPage {
 
     protected BaseTest testClass;
 
+    public String actualWindow;
 
     //
     // Web elements with @FindBy annotation
@@ -60,10 +60,7 @@ public abstract class AbstractPage {
     @FindBy(xpath = "//span[contains(@class,'ajax_cart_no_product')]")
     public WebElement cartEmpty;
 
-
-    /**
-     * Constructor
-     */
+    /** Constructor */
     public AbstractPage(BaseTest testClass) {
         this.testClass = testClass;
         PageFactory.initElements(testClass.getDriver(), this); // Initialize WebElements
@@ -91,9 +88,7 @@ public abstract class AbstractPage {
         return new LoginPage(testClass);
     }
 
-    /**
-     * Click at 'add to cart' button
-     */
+    /** Click at 'add to cart' button */
     public void addToCart() {
         addToCartButton.click();
     }
@@ -109,13 +104,18 @@ public abstract class AbstractPage {
         return new ShoppingCartSummary(testClass);
     }
 
+    /** click at Continue shopping button */
     public void continueShopping() {
         testClass.waitTillElementIsVisible(continueShopping);
         continueShopping.click();
     }
 
+    /**
+     * @param webElement element which needs to to be opened in new tab
+     * @return instance of page
+     */
     public PrintedDress openInNewTabAndSwitch(WebElement webElement) {
-        String actualWindow = testClass.getDriver().getWindowHandle();
+        actualWindow = testClass.getDriver().getWindowHandle();
         webElement.sendKeys(Keys.chord(Keys.CONTROL, Keys.RETURN));
 
         Set<String> windows = testClass.getDriver().getWindowHandles();
@@ -129,20 +129,29 @@ public abstract class AbstractPage {
         return new PrintedDress(testClass);
     }
 
+    /** close current tab */
     public void closeTab() {
-       testClass.getDriver().close();
+        testClass.getDriver().close();
     }
 
+    /** switches to active tab */
     public void switchToActiveTab() {
-        String activeWindow = testClass.getDriver().getWindowHandle();
-        testClass.getDriver().switchTo().window(activeWindow);
+        testClass.getDriver().switchTo().window(actualWindow);
     }
 
-    public Set<Cookie> returnAllCookies() {
-        return testClass.getDriver().manage().getCookies();
+    /** prints name of Cookies */
+    public void printCookiesName() {
+        Set<Cookie> cookies = testClass.getDriver().manage().getCookies();
+        for (Cookie s : cookies) {
+            System.out.println(s.getName());
+        }
     }
 
-
+    /**
+     * Focus on cart and check color and size to match with expected
+     *
+     * @param s string from ENUM with expected color and size
+     */
     public void focusOnCartAndCheckColorAndSize(String s) {
         testClass.actions.moveToElement(shoppingCart).perform();
         testClass.waitTillElementIsVisible(itemAttributes);
@@ -152,6 +161,7 @@ public abstract class AbstractPage {
                 itemAttributes.getText().replaceAll(",|\\s+", ""));
     }
 
+    /** verify if cart is empty */
     public void checkCartIsEmpty() {
         testClass.waitTillElementIsVisible(cartEmpty);
         String s = "(empty)";
@@ -161,6 +171,7 @@ public abstract class AbstractPage {
                 cartEmpty.getText().replaceAll(",|\\s+", ""));
     }
 
+    /** Removes item from Cart */
     public void removeItem() {
         testClass.waitTillElementIsVisible(removeItem);
         removeItem.click();

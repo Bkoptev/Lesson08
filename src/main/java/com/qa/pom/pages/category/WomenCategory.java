@@ -6,12 +6,10 @@ public class WomenCategory extends AbstractCategory {
     /**
      * Constructor
      *
-     * @param testClass
+     * @param testClass return the instance of Women сategory page
      */
     public WomenCategory(BaseTest testClass) {
         super(testClass);
         testClass.waitTillElementIsVisible(pageDiv);
     }
-
-
 }

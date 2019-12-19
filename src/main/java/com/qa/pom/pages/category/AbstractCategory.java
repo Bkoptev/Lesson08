@@ -8,7 +8,6 @@ import org.openqa.selenium.support.FindBy;
 
 public abstract class AbstractCategory extends AbstractPage {
 
-
     @FindBy(
             xpath =
                     "//li[@id='category-thumbnail']/../../following-sibling::li/a[@title='Dresses']")
@@ -24,16 +23,11 @@ public abstract class AbstractCategory extends AbstractPage {
                     "//div[@id='categories_block_left']//ul[@class='tree dynamized']//a[contains (text(),'Summer Dresses')]")
     public WebElement summerDresses;
 
-    @FindBy(
-            xpath =
-                    "//a[@class='sf-with-ul' and @title='Women']/..")
+    @FindBy(xpath = "//a[@class='sf-with-ul' and @title='Women']/..")
     public WebElement women;
 
-    @FindBy(
-            xpath =
-                    "//ul[contains(@class,'submenu-container')]//ul//a[@title='Evening Dresses']")
+    @FindBy(xpath = "//ul[contains(@class,'submenu-container')]//ul//a[@title='Evening Dresses']")
     public WebElement eveningDresses;
-
 
     /**
      * Constructor
@@ -67,11 +61,15 @@ public abstract class AbstractCategory extends AbstractPage {
         return new TshirtsCategory(testClass);
     }
 
+    /**
+     * wait for loading button with Evening Dresses list and click on it
+     *
+     * @return instance of Evening Dresses
+     */
     public EveningDressesProductList clickEveningDressesProductList() {
         testClass.actions.moveToElement(women).perform();
         testClass.waitTillElementIsVisible(eveningDresses);
         eveningDresses.click();
         return new EveningDressesProductList(testClass);
     }
-
 }

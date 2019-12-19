@@ -2,12 +2,10 @@ package com.qa.pom.base;
 
 import com.qa.pom.pages.HomePage;
 import com.qa.pom.utils.YamlParser;
-
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Collections;
-
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.junit.Rule;
@@ -25,17 +23,13 @@ public class BaseTest {
     private WebDriverWait wait;
     public Actions actions;
 
-
     // Logger
     private Logger logger = LogManager.getLogger(LogManager.ROOT_LOGGER_NAME);
 
     // Rule
-    @Rule
-    public RunTestRules runTestRules = new RunTestRules(this);
+    @Rule public RunTestRules runTestRules = new RunTestRules(this);
 
-    /**
-     * Constructor
-     */
+    /** Constructor */
     public BaseTest() {
         // If you want to disable infobars please use this code
         ChromeOptions options = new ChromeOptions();
@@ -77,7 +71,6 @@ public class BaseTest {
     public WebDriver getDriver() {
         return driver;
     }
-
 
     /**
      * Wait till element is visible

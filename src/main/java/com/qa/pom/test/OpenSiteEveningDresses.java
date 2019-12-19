@@ -7,9 +7,8 @@ import com.qa.pom.pages.LoginPage;
 import com.qa.pom.pages.MyAccountPage;
 import com.qa.pom.pages.productlist.EveningDressesProductList;
 import com.qa.pom.pages.productlist.product.PrintedDress;
-import org.junit.Test;
-
 import java.io.IOException;
+import org.junit.Test;
 
 public class OpenSiteEveningDresses extends BaseTest {
     @Test
@@ -27,10 +26,13 @@ public class OpenSiteEveningDresses extends BaseTest {
         MyAccountPage myAccountPage = loginPage.logIn();
         log("Entered email and password on log in page and submit them");
 
-        EveningDressesProductList eveningDressesProductList = myAccountPage.clickEveningDressesProductList();
+        EveningDressesProductList eveningDressesProductList =
+                myAccountPage.clickEveningDressesProductList();
         log("Waited for Evening Dresses and click on it");
 
-        PrintedDress printedDress = eveningDressesProductList.openInNewTabAndSwitch(eveningDressesProductList.printedDres);
+        PrintedDress printedDress =
+                eveningDressesProductList.openInNewTabAndSwitch(
+                        eveningDressesProductList.printedDres);
         log("Open printed dress product in new tab and switch on it");
 
         printedDress.chooseColor();
@@ -45,7 +47,8 @@ public class OpenSiteEveningDresses extends BaseTest {
         printedDress.continueShopping();
         log("Continue shopping button clicked");
 
-        printedDress.focusOnCartAndCheckColorAndSize(SizeAndColor.PINK.getValue() + SizeAndColor.L.getValue());
+        printedDress.focusOnCartAndCheckColorAndSize(
+                SizeAndColor.PINK.getValue() + SizeAndColor.L.getValue());
         log("Pink color and size L verified");
 
         printedDress.removeItem();
@@ -60,15 +63,7 @@ public class OpenSiteEveningDresses extends BaseTest {
         eveningDressesProductList.switchToActiveTab();
         log("Switched to active tab");
 
-        System.out.println(printedDress.returnAllCookies());
-
-
-
-
-
-
-
-
+        printedDress.printCookiesName();
+        log("Cookies name were printed");
     }
 }
-
